@@ -33,10 +33,12 @@ equality.
 There is also a file that contains all of the pill sequences used, in case
 you'd like to do your own analyses. It is a bzipped text file. In the file, you
 will see many copies of this sequence:
+
 * a seed (a 16-bit number) on its own line,
 * 128 pills, each on their own line, with the color (y, r, or b) of the left
   half first, then the right half, and
 * a blank line separator.
+
 There are 32767 chunks in this format. (The NES does not use seed 0; it uses an
 LFSR, and if an LFSR ever hits 0 it stays there forever, which doesn't look
 very random to the player. Odd seeds produce the exact same pill sequences as
