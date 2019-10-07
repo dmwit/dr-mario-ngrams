@@ -1,4 +1,4 @@
-This directory contains example outputs produced by the program in the
+This directory contains example outputs produced by the programs in the
 directory above.
 
 Each image here is a graph. Plotted along the X-axis are Dr. Mario pill
@@ -29,3 +29,15 @@ other. The graphs also visually indicate this distinction: pills rendered
 horizontally indicate the current graph was built with an exact equality, while
 vertical pills indicate the current graph was built with the quotiented
 equality.
+
+There is also a file that contains all of the pill sequences used, in case
+you'd like to do your own analyses. It is a bzipped text file. In the file, you
+will see many copies of this sequence:
+* a seed (a 16-bit number) on its own line,
+* 128 pills, each on their own line, with the color (y, r, or b) of the left
+  half first, then the right half, and
+* a blank line separator.
+There are 32767 chunks in this format. (The NES does not use seed 0; it uses an
+LFSR, and if an LFSR ever hits 0 it stays there forever, which doesn't look
+very random to the player. Odd seeds produce the exact same pill sequences as
+their next-door neighbor one down.)
