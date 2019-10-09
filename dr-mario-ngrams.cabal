@@ -18,20 +18,35 @@ extra-source-files:  CHANGELOG.md
 
 executable graph-dr-mario-ngrams
   main-is:             ngrams.hs
-  build-depends:       base ^>=4.12,
+  build-depends:
                        containers ^>=0.5,
                        diagrams-lib ^>=1.4,
                        diagrams-svg ^>=1.4,
                        maryodel ^>=0.1,
                        optparse-applicative ^>=0.14,
-                       vector ^>=0.12
+                       vector ^>=0.12,
+                       base ^>=4.12
   default-language:    Haskell2010
   ghc-options:         -fno-warn-tabs
 
 executable dump-dr-mario-ngrams
   main-is:             dump.hs
-  build-depends:       base ^>=4.12,
+  build-depends:
                        maryodel ^>=0.1,
-                       vector ^>=0.12
+                       vector ^>=0.12,
+                       suffix-array ^>=0.3,
+                       base ^>=4.12
+  default-language:    Haskell2010
+  ghc-options:         -fno-warn-tabs
+
+executable canonize-dr-mario-pills
+  main-is:             canonize.hs
+  build-depends:
+                       array ^>=0.5,
+                       containers ^>=0.5,
+                       maryodel ^>=0.1,
+                       suffix-array ^>=0.3,
+                       vector ^>=0.12,
+                       base ^>=4.12
   default-language:    Haskell2010
   ghc-options:         -fno-warn-tabs
