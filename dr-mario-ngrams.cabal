@@ -50,3 +50,13 @@ executable canonize-dr-mario-pills
                        base ^>=4.12
   default-language:    Haskell2010
   ghc-options:         -fno-warn-tabs
+
+executable dr-mario-droughts
+  main-is:             droughts.hs
+  build-depends:
+                       maryodel ^>=0.1,
+                       multiset ^>=0.3,
+                       vector ^>=0.12,
+                       base ^>=4.12
+  default-language:    Haskell2010
+  ghc-options:         -fno-warn-tabs
