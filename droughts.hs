@@ -12,6 +12,9 @@ singleDroughts :: (a -> Bool) -> Vector a -> IntMultiSet
 singleDroughts p v = IMS.fromList
 	[ droughtLen
 	| droughtWidth <- V.toList $ V.zipWith (-)
+		-- You might wonder how come we don't add something so that we get
+		-- [0 .. is ! 0] in the mix. Joke's on you: we do! These are counted as
+		-- part of the [0 .. (is ! 0) + n - last is] chunk. Think about it.
 		(V.drop 1 is <> V.singleton ((is V.! 0) + n))
 		is
 	, droughtLen <- [0..droughtWidth-1]
